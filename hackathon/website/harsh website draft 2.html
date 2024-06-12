@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vite-react-ts</title>
+</head>
+<body>
+  <script type="module">
+    import { defineConfig } from 'vite';
+    import react from '@vitejs/plugin-react';
+
+    const json = {
+      "compilerOptions": {
+        "composite": true,
+        "module": "esnext",
+        "moduleResolution": "node"
+      },
+      "include": ["vite.config.ts"]
+    };
+
+    // Access the JSON data
+    console.log(json.compilerOptions.composite);
+    console.log(json.include[0]);
+    // ... and so on
+
+    // Define the Vite configuration
+    const config = defineConfig({
+      server: { watch: { awaitWriteFinish: true } },
+      plugins: [react()],
+    });
+
+    // Insert your JavaScript code here
+  </script>
+</body>
+</html>

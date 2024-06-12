@@ -1,0 +1,1 @@
+ Write a program in Java to read content from the file and print the number of words and sentences in it. The input format consists of a paragraph in a file and the output format prints the total number of words and sentences separately.

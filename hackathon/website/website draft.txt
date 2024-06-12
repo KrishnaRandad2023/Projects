@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Name</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#decarbonisation">Decarbonisation</a></li>
+        <li><a href="#crimes">Crimes</a></li>
+        <li><a href="#fundraiser">Fundraiser</a></li>
+        <li><a href="#join">Join the Initiative</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#FAQ"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to our Initiative</h1>
+      <p>Building a sustainable future for a better world</p>
+      <div class="cta-buttons">
+        <a href="#about" class="btn">Learn More</a>
+        <a href="#join" class="btn">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-us">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Our initiative is dedicated to creating a sustainable future by promoting environmental awareness and taking actions towards decarbonisation. We envision a world where renewable energy sources are widely adopted and carbon emissions are significantly reduced.</p>
+    </div>
+
+    <div id="team-members">
+      <div class="team-member">
+        <img src="team-member1.jpg" alt="Team Member 1">
+        <h3>Vansh Kalanti</h3>
+        <p>Founder</p>
+        <p>Randi</p>
+      </div>
+      <div class="team-member">
+        <img src="team-member2.jpg" alt="Team Member 2">
+        <h3>Krishna Randad</h3>
+        <p>co-Founder</p>
+        <p>Gamer</p>
+      </div>
+      <div class="team-member">
+        <img src="team-member3.jpg" alt="Team Member 3">
+        <h3>Harsh Agrawal</h3>
+        <p>co-Founder</p>
+        <p>GymFreak</p>
+      </div>
+      <div class="team-member">
+        <img src="team-member4.jpg" alt="Team Member 4">
+        <h3>Vraj Govani</h3>
+        <p>co-Founder</p>
+        <p>you will find him watching movies</p>
+      </div>
+      <div class="team-member">
+        <img src="team-member5.jpg" alt="Team Member 5">
+        <h3>Madhur Toshniwal</h3>
+        <p>co-Founder</p>
+        <p>reel Master</p>
+      </div>
+    </div>
+
+    <div id="partnerships">
+      <h2>Partnerships</h2>
+      <img src="partnership1.jpg" alt="Quick Advertising Agency">
+      <img src="partnership2.jpg" alt="Sevashraya">
+    </div>
+  </section>
+
+  <section id="decarbonisation">
+    <!-- Content of the Decarbonisation section goes here -->
+  </section>
+
+  <section id="crimes">
+    <!-- Content of the Crimes section goes here -->
+  </section>
+
+  <section id="fundraiser">
+    <div class="container">
+      <h2>Fundraiser</h2>
+      <!-- Add your fundraiser content here -->
+    </div>
+  </section>
+
+  <section id="mission-vision">
+    <div class="container">
+      <h2>Mission and Vision</h2>
+      <p><strong>Mission:</strong> Our mission is to build a model that pushes the world towards better living conditions through decarbonisation, crime reduction, and financial stability. We aim to collaborate with the government to control blockchain and provide funds to industries based on their efforts. Inspired by the feasibility provided by cryptocurrency, we seek to inform people about the important parameters related to pollution and equip them with a green bot that provides solutions for carbon-contributing household chores. Furthermore, we address the lack of support for individuals stuck in crimes by providing solutions based on relevant situations mentioned in the Indian Penal Code through our Law Bot pro-inspired platform. Additionally, we focus on financial stability by creating active employment opportunities and providing essential skills required for various jobs along with resource links.</p>
+      <p><strong>Vision:</strong> Our vision is to create a unified platform that eliminates the need for individuals to jump between different platforms for different causes. We aim to build a website that incorporates all the features mentioned above, enabling the general audience to actively participate in decarbonisation, crime reduction, and achieving financial stability. By managing a blockchain system of funds at the national level, we strive to create a seamless experience for users and facilitate the transition towards a sustainable and environmentally conscious future.</p>
+    </div>
+  </section>
+
+  <!-- Rest of your website content goes here -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
