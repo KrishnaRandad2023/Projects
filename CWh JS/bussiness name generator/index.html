@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function adjective() {
+            let a = "crazy";
+            let b = "amazing";
+            let c = "fire";
+        
+            let random = Math.floor(Math.random() * 3);
+            switch (random) {
+                case 0:
+                    return a;
+                case 1:
+                    return b;
+                case 2:
+                    return c;
+            }
+        }
+        
+        function shopname() {
+            let a = "engine";
+            let b = "foods";
+            let c = "garments";
+        
+            let random = Math.floor(Math.random() * 3);
+            switch (random) {
+                case 0:
+                    return a;
+                case 1:
+                    return b;
+                case 2:
+                    return c;
+            }
+        }
+        
+        function anotherword() {
+            let a = "bros";
+            let b = "limited";
+            let c = "hub";
+        
+            let random = Math.floor(Math.random() * 3);
+            switch (random) {
+                case 0:
+                    return a;
+                case 1:
+                    return b;
+                case 2:
+                    return c;
+            }
+        }
+        
+        function generateBusinessName() {
+            console.log("The business name is: " + adjective() + " " + shopname() + " " + anotherword());
+        }
+
+        generateBusinessName(); // Call the function to generate and log the business name.
+    </script>
+</body>
+</html>

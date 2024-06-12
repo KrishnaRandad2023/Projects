@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+</head>
+<style>
+    .child {
+        background-color: blue;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .parent {
+        background-color: grey;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .grandparent {
+        background-color: rgb(229, 245, 2);
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .child2 {
+        background-color: blue;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .parent2 {
+        background-color: grey;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .grandparent2 {
+        background-color: rgb(229, 245, 2);
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <!-- <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+                hello i am a child
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".parent").addEventListener("click", () => {
+            alert("parent was clicked")
+        })
+        document.querySelector(".grandparent").addEventListener("click", () => {
+            alert("grandparent was clicked")
+        })
+        document.querySelector(".child").addEventListener("click", () => {
+            alert("child was clicked")
+        })
+    </script> -->
+
+    <!-- if we run this script we can notice that if we click on child , we get all the three alerts 
+    if we click on parent we get two alerts , if we click on grandparent we get one alert 
+
+    if we dont want this we do the following changes  -->
+
+    <div class="grandparent2">
+        <div class="parent2">
+            <div class="child2">
+                hello i am a child2
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".parent2").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("parent2 was clicked")
+        })
+        document.querySelector(".grandparent2").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("grandparent2 was clicked")
+        })
+        document.querySelector(".child2").addEventListener("click", (e) => {
+            e.stopPropagation()
+            alert("child2 was clicked")
+        })
+
+        function getRandomColor(){
+            var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D', '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
+            '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+            '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+            '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+            '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
+            '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+            '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
+            '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+            a=colorArray.length;
+            let temp1 =Math.floor(Math.random()*a)
+            return colorArray[temp1]
+        
+        }
+
+        //let a = setInterval(() => {
+            //document.querySelector(".child2").style.background = getRandomColor();
+            //document.querySelector(".parent2").style.background = getRandomColor();
+            //document.querySelector(".grandparent2").style.background = getRandomColor();
+        //}, 1000) -->
+
+        //clearInterval(a)
+        let b = setTimeout(() => {
+            document.querySelector(".child2").style.background = getRandomColor();
+            document.querySelector(".parent2").style.background = getRandomColor();
+            document.querySelector(".grandparent2").style.background = getRandomColor();
+        }, 5000)
+
+
+    </script>
+</body>
+
+</html>

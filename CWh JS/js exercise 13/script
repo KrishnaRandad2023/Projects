@@ -1,0 +1,28 @@
+function createCard(title, cName, views, duration, thumbnail) {
+    let html = `<div class="box">
+        <div class="thumbnail">
+            <img src="${thumbnail}" alt="thumbnail" height="165rem" width="250rem">
+        </div>
+        <div class="content">
+            <div class="title">
+                ${title} 
+            </div>
+            <div class="subheadings">
+                <div class="cName">
+                    ${cName} 
+                </div>
+                <div class="views">
+                    ${views}
+                </div>
+                <div class="durationdate">
+                    ${duration} months ago
+                </div>
+            </div>
+        </div>
+    </div>`
+
+    document.querySelector(".container").innerHTML += html;
+}
+
+createCard("Installing vs code  & how websites work  sigma web development - tutorial 1", "codewithharry", "727k views", "2 months ago", "./assets/hqdefault.avif");
+createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry", 560000, 7, "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw")

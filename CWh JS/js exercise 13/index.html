@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            /* height: 10rem; */
+            /* width: 80rem; */
+            /* border: solid 2px black; */
+            margin: 50px;
+            display: flex;
+            /* justify-content: space-between; */
+            border: solid 2px black;
+            border-radius: 5px;
+            height: fit-content;
+            width: fit-content;
+            background-color: black;
+        }
+
+        .subheadings {
+            display: flex;
+            gap: 5px;
+            font-size: 150%;
+            padding-top: 20px;
+            color: grey;
+        }
+
+        .title {
+            font-size: 200%;
+            padding-top: 25px;
+            color: white;
+        }
+
+        .content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+
+    <script>
+        function createCard(title, cName, views, duration, thumbnail) {
+            let html = `<div class="box">
+                <div class="thumbnail">
+                    <img src="${thumbnail}" alt="thumbnail" height="165rem" width="250rem">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        ${title} 
+                    </div>
+                    <div class="subheadings">
+                        <div class="cName">
+                            ${cName} 
+                        </div>
+                        <div class="views">
+                            ${views}
+                        </div>
+                        <div class="durationdate">
+                            ${duration} months ago
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+            return html;
+        }
+
+        let card1 = createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry", 560000, 7, "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw");
+        let card2 = createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry", 560000, 7, "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw");
+
+        document.querySelector(".container").insertAdjacentHTML('beforeend', card1);
+        document.querySelector(".container").insertAdjacentHTML('beforeend', card2);
+    </script>
+</body>
+</html>
