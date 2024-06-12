@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farming News in India</title>
+</head>
+<body>
+  <div style="width: 32%; margin-right:15px; margin-left:10px; margin-top:25px; margin-bottom:25px"><h2>Farming and Agriculture News in India</h2>
+
+    <style>
+        .article {
+            width: 350px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .article img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        #newsContainerWrapper {
+            height: 500px;
+            overflow-y: auto;
+        }
+
+        #newsContainer {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <div id="newsContainerWrapper"> 
+        <div id="newsContainer"></div>
+    </div>
+
+    <script>
+        var today = new Date();
+        var m = today.getMonth();
+        var d = today.getDate();
+        var y = today.getFullYear();
+        m++;
+        m = checkTime(m);
+        d--;
+        d = checkTime(d);
+        var f = y + "-" + m + "-" + d;
+
+        const apiKey = "your_api_key_here"; // Place your actual API key here
+        const query = "farming in India";
+        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&from=${f}&sortBy=publishedAt&apiKey=${apiKey}`;
+
+        async function fetchNews() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                return data.articles.slice(0, 10); 
+            } catch (error) {
+                console.error(
+                    "Error fetching farming news in India:",
+                    error.message
+                );
+                return null;
+            }
+        }
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };
+            return i;
+        }
+
+        function displayNews(newsData) {
+            const newsContainer = document.getElementById('newsContainer');
+            if (newsData && newsData.length > 0) {
+                newsData.forEach(article => {
+                    console.log("Farming news in India data:", newsData);
+
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('article');
+
+                    const titleElement = document.createElement('h3');
+                    titleElement.textContent = article.title;
+
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = article.description;
+
+                    const urlElement = document.createElement('a');
+                    urlElement.href = article.url;
+                    urlElement.textContent = "Read more";
+
+                    const urlToImageElement = document.createElement('img');
+                    urlToImageElement.src = article.urlToImage;
+                    urlToImageElement.alt = article.title;
+
+                    articleElement.appendChild(titleElement);
+                    articleElement.appendChild(descriptionElement);
+                    articleElement.appendChild(urlElement);
+                    articleElement.appendChild(urlToImageElement);
+
+                    newsContainer.appendChild(articleElement);
+                });
+            } else {
+                newsContainer.textContent = "No news available.";
+            }
+        }
+
+        fetchNews()
+            .then(displayNews)
+            .catch(error => {
+                console.error("Error displaying news:", error.message);
+            });
+    </script>
+
+</div>
+</body>
+</html>
